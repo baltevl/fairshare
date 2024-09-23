@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Create new flatshare{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="share_name">Flatshare name</label>
+    <input name="share_name" id="share_name" required>
+    <label for="flat_mates">Flatmates</label>
+    <select name="flat_mates" id="flat_mates" multiple>
+      <option value="">Test</option>
+      <option value="">Test</option>
+      <option value="">Test</option>
+      <option value="">Test</option>
+    <input type="submit" value="Create">
+  </form>
+{% endblock %}

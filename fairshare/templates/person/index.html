@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}People{% endblock %}</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('person.new') }}">New</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% for person in persons %}
+    <article class="person">
+      <header>
+        <div>
+          {{ person.name }}
+          <form action="{{ url_for('person.edit', id=person['id']) }}" method="post">
+            <input type="submit" value="Edit">
+          </form>
+        </div>
+      </header>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Overview{% endblock %}</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('flatshare.edit') }}">Edit Flatshare</a>
+    <a class="action" href="{{ url_for('person.index') }}">People</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
